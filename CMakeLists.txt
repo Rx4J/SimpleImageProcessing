@@ -1,0 +1,8 @@
+cmake_minimum_required(VERSION 3.0)
+project( CourseWork )
+find_package( OpenCV REQUIRED )
+find_package( MPI REQUIRED )
+add_definitions( -DOMPI_SKIP_MPICXX )
+include_directories( ${OpenCV_INCLUDE_DIRS} ${MPI_INCLUDE_PATH} )
+add_executable( CourseWork src/main.cpp src/alghorithms.cpp )
+target_link_libraries( CourseWork ${OpenCV_LIBS} ${MPI_C_LIBRARIES} )
